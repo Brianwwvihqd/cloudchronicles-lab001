@@ -1,0 +1,9 @@
+Databases: We’ve got backup Cloud SQL replicas in us-east1 and us-west1. If the primary fails, we switch to one of these instantly. When things are back up, we rebuild the replica.
+
+Storage: Multi-region Cloud Storage is a lifesaver—your data is already duplicated across regions, so there’s no disruption.
+
+Messaging: Pub/Sub is set up across multiple regions. If one stops working, messages still go through. Once everything’s back, we resume normal routing.
+
+Traffic Handling: A global load balancer ensures traffic automatically redirects to healthy instances, keeping apps online. When us-central1 is back, the system smoothly brings workloads back in.
+
+Alerts & Monitoring: Cloud Monitoring and Pub/Sub alerts notify the team about failures so action happens fast. After recovery, we analyze what happened to improve the plan.
